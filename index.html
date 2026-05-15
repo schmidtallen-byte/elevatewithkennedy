@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevate With Kennedy | Mobile Spray Tans · North Atlanta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand:    #F5EFE6;
+  --linen:   #FDF9F4;
+  --bronze:  #B07D57;
+  --copper:  #C9894F;
+  --espresso:#2A1A0E;
+  --warm:    #7A5C44;
+  --mist:    #D6C5B4;
+  --cream:   #EDE3D8;
+  --white:   #FFFDF9;
+  --accent:  #C8724A;
+  --nav-h:   72px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--linen);
+  color: var(--espresso);
+  overflow-x: hidden;
+}
+
+/* ─── MOBILE MENU ─── */
+#mobile-drawer {
+  display: none;
+  position: fixed; inset: 0; z-index: 200;
+}
+#mobile-drawer.open { display: flex; }
+.drawer-overlay {
+  position: absolute; inset: 0;
+  background: rgba(42,26,14,0.45);
+}
+.drawer-panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(320px,85vw);
+  background: var(--white);
+  display: flex; flex-direction: column; padding: 2rem 2rem;
+  gap: 0;
+}
+.drawer-close {
+  align-self: flex-end; background: none; border: none;
+  font-size: 1.6rem; cursor: pointer; color: var(--espresso);
+  line-height: 1; margin-bottom: 2rem;
+}
+.drawer-panel a {
+  display: block; font-family: 'Jost', sans-serif;
+  font-size: 1rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--espresso); text-decoration: none;
+  padding: 1rem 0; border-bottom: 1px solid var(--cream);
+}
+.drawer-panel a:last-child { border-bottom: none; }
+.drawer-book {
+  margin-top: 2rem; display: block; text-align: center;
+  background: var(--accent); color: #fff !important;
+  padding: 0.9rem 1.5rem; border-radius: 3px;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  background: rgba(253,249,244,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(176,125,87,0.15);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; font-weight: 400; letter-spacing: 0.04em;
+  color: var(--espresso); text-decoration: none; line-height: 1.15;
+}
+.nav-logo span { display: block; font-style: italic; color: var(--copper); font-size: 1rem; }
+.nav-links {
+  display: flex; align-items: center; gap: 2.25rem; list-style: none;
+}
+.nav-links a {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--warm); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-book {
+  padding: 0.6rem 1.5rem; background: var(--espresso);
+  color: var(--white); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; transition: background 0.2s;
+}
+.nav-book:hover { background: var(--accent); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--espresso); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 55% 45%;
+  padding-top: var(--nav-h);
+}
+.hero-content {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 7vw 5vw 7vw 7vw;
+  background: var(--linen);
+}
+.hero-label {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--copper);
+  margin-bottom: 1.75rem;
+}
+.hero-label::before {
+  content: ''; display: block; width: 28px; height: 1px; background: var(--copper);
+}
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  font-weight: 400; line-height: 1.1; color: var(--espresso);
+  margin-bottom: 1.5rem;
+}
+.hero-h1 em { font-style: italic; color: var(--accent); }
+.hero-sub {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+  color: var(--warm); max-width: 420px; margin-bottom: 2.75rem;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-dark {
+  padding: 0.9rem 2.2rem; background: var(--espresso); color: var(--white);
+  font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; transition: background 0.2s;
+}
+.btn-dark:hover { background: var(--accent); }
+.btn-ghost {
+  padding: 0.9rem 2.2rem; background: transparent; color: var(--espresso);
+  font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  border: 1.5px solid var(--mist); border-radius: 2px; transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.hero-image {
+  background: linear-gradient(160deg, #D4B49A 0%, #B07D57 40%, #7A5230 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  padding: 2.5rem;
+}
+.hero-badge {
+  background: rgba(253,249,244,0.95); backdrop-filter: blur(8px);
+  border-radius: 4px; padding: 1.25rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+  max-width: 220px;
+}
+.hero-badge-tag {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--copper);
+}
+.hero-badge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: var(--espresso);
+}
+.hero-badge-sub {
+  font-size: 0.78rem; color: var(--warm); font-weight: 300;
+}
+.hero-pill {
+  position: absolute; top: 2rem; right: 2rem;
+  background: var(--accent); color: white;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 0.5rem 1.1rem; border-radius: 100px;
+}
+.hero-img-hint {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+.hero-img-hint-box {
+  background: rgba(255,255,255,0.75); border-radius: 6px;
+  padding: 1rem 1.5rem; text-align: center; max-width: 220px;
+}
+.hero-img-hint-box p { font-size: 0.8rem; color: var(--warm); line-height: 1.5; }
+.hero-img-hint-box strong { color: var(--espresso); display: block; margin-bottom: 0.25rem; }
+
+/* ─── TAGLINE BAR ─── */
+.tagline-bar {
+  background: var(--espresso); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  gap: 3rem; padding: 1.25rem 5vw; flex-wrap: wrap;
+  text-align: center;
+}
+.tagline-bar span {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mist); display: flex; align-items: center; gap: 0.6rem;
+}
+.tagline-bar span::before { content: '◆'; color: var(--copper); font-size: 0.5rem; }
+
+/* ─── INTRO ─── */
+.intro {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.intro-image {
+  background: linear-gradient(170deg, #C9A07A 0%, #8B5E3C 100%);
+  position: relative; overflow: hidden; min-height: 420px;
+  display: flex; align-items: center; justify-content: center;
+}
+.intro-img-label {
+  background: rgba(42,26,14,0.6); color: var(--white);
+  font-size: 0.75rem; font-weight: 300; letter-spacing: 0.06em;
+  padding: 0.5rem 1rem; border-radius: 2px;
+  font-style: italic;
+}
+.intro-content {
+  padding: 6vw 6vw 6vw 5vw;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--white);
+}
+.section-eyebrow {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--copper);
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem;
+}
+.section-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--copper); display: block; }
+.section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 400; line-height: 1.2; color: var(--espresso);
+  margin-bottom: 1.25rem;
+}
+.section-h2 em { font-style: italic; color: var(--accent); }
+.section-body {
+  font-size: 1rem; font-weight: 300; line-height: 1.8;
+  color: var(--warm); margin-bottom: 1.25rem;
+}
+.check-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 0.7rem; margin: 1.5rem 0 2rem;
+}
+.check-list li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  font-size: 0.9rem; color: var(--warm); font-weight: 300;
+}
+.check-list li::before {
+  content: '✓'; color: var(--copper); font-weight: 600;
+  font-size: 0.85rem; flex-shrink: 0; margin-top: 1px;
+}
+
+/* ─── SERVICES ─── */
+.services {
+  background: var(--sand); padding: 6rem 7vw;
+}
+.section-header { margin-bottom: 3.5rem; }
+.section-header.center { text-align: center; }
+.section-header.center .section-eyebrow { justify-content: center; }
+.section-header.center .section-eyebrow::before { display: none; }
+.section-header.center .section-body { max-width: 560px; margin-left: auto; margin-right: auto; }
+
+.services-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.service-card {
+  background: var(--white); padding: 2.5rem 2.25rem;
+  border: 1px solid rgba(176,125,87,0.15);
+  border-radius: 3px; position: relative; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.service-card:hover {
+  box-shadow: 0 16px 48px rgba(42,26,14,0.1);
+  transform: translateY(-3px);
+}
+.service-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--copper), var(--accent));
+}
+.service-popular {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  background: var(--accent); color: white;
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px;
+}
+.service-price-tag {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem; color: var(--espresso); font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+.service-price-tag sup {
+  font-size: 1.1rem; vertical-align: super; font-family: 'Jost', sans-serif;
+  font-weight: 300;
+}
+.service-name {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--copper); margin-bottom: 1rem;
+}
+.service-desc {
+  font-size: 0.9rem; font-weight: 300; line-height: 1.75; color: var(--warm);
+  margin-bottom: 1.5rem;
+}
+.service-includes {
+  list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.service-includes li {
+  font-size: 0.82rem; color: var(--warm); font-weight: 300;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.service-includes li::before { content: '—'; color: var(--mist); }
+.service-cta {
+  display: block; text-align: center; padding: 0.8rem;
+  background: var(--espresso); color: var(--white);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s;
+}
+.service-cta:hover { background: var(--accent); }
+
+.group-banner {
+  background: var(--espresso); color: var(--white);
+  border-radius: 3px; padding: 2.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.group-banner-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem; font-weight: 400; margin-bottom: 0.4rem;
+}
+.group-banner-text p {
+  font-size: 0.9rem; font-weight: 300; color: var(--mist); line-height: 1.6;
+}
+.btn-copper {
+  padding: 0.9rem 2.25rem; background: var(--copper); color: var(--white);
+  font-family: 'Jost', sans-serif; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; white-space: nowrap; transition: background 0.2s;
+  flex-shrink: 0;
+}
+.btn-copper:hover { background: var(--accent); }
+
+/* ─── WHY ─── */
+.why {
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--white);
+}
+.why-content {
+  padding: 7vw 5vw 7vw 7vw;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.why-pillars {
+  display: flex; flex-direction: column; gap: 2rem; margin: 2.5rem 0 2.5rem;
+}
+.pillar { display: flex; gap: 1.25rem; }
+.pillar-num {
+  font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400;
+  color: var(--cream); line-height: 1; flex-shrink: 0; min-width: 2rem;
+  transition: color 0.25s;
+}
+.pillar:hover .pillar-num { color: var(--copper); }
+.pillar-body strong {
+  display: block; font-size: 0.88rem; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--espresso); margin-bottom: 0.3rem;
+}
+.pillar-body span { font-size: 0.85rem; font-weight: 300; color: var(--warm); line-height: 1.6; }
+.why-image {
+  background: linear-gradient(150deg, #B8896A 0%, #7A5230 60%, #4A2E14 100%);
+  position: relative; min-height: 500px;
+  display: flex; align-items: flex-start; justify-content: flex-end;
+  padding: 2.5rem;
+}
+.glow-chip {
+  background: rgba(253,249,244,0.95); border-radius: 4px;
+  padding: 1.25rem 1.5rem; text-align: right; max-width: 180px;
+}
+.glow-chip-stat {
+  font-family: 'Playfair Display', serif; font-size: 2.5rem;
+  font-weight: 400; color: var(--espresso); line-height: 1;
+}
+.glow-chip-label { font-size: 0.7rem; color: var(--warm); margin-top: 0.25rem; letter-spacing: 0.04em; }
+
+/* ─── MEMBERSHIPS ─── */
+.memberships {
+  background: var(--espresso); padding: 6rem 7vw;
+}
+.memberships .section-eyebrow { color: var(--mist); }
+.memberships .section-eyebrow::before { background: var(--mist); }
+.memberships .section-h2 { color: var(--white); }
+.memberships .section-body { color: var(--mist); }
+.membership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3.5rem; }
+.mem-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 3px; padding: 2.5rem 2rem; transition: all 0.25s;
+}
+.mem-card:hover { background: rgba(201,137,79,0.15); border-color: var(--copper); }
+.mem-card.featured { background: var(--copper); border-color: var(--copper); }
+.mem-tier {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--mist); margin-bottom: 0.5rem;
+}
+.mem-card.featured .mem-tier { color: rgba(255,255,255,0.75); }
+.mem-price {
+  font-family: 'Playfair Display', serif; font-size: 3rem;
+  color: var(--white); font-weight: 400; line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.mem-price sub {
+  font-size: 1rem; font-family: 'Jost', sans-serif;
+  font-weight: 300; vertical-align: baseline;
+}
+.mem-period { font-size: 0.78rem; color: var(--mist); margin-bottom: 1.75rem; }
+.mem-card.featured .mem-period { color: rgba(255,255,255,0.75); }
+.mem-perks {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 0.7rem; margin-bottom: 2rem;
+}
+.mem-perks li {
+  font-size: 0.85rem; font-weight: 300; color: var(--mist);
+  display: flex; gap: 0.65rem; align-items: flex-start; line-height: 1.5;
+}
+.mem-card.featured .mem-perks li { color: rgba(255,255,255,0.9); }
+.mem-perks li::before { content: '✓'; color: var(--copper); font-weight: 700; flex-shrink: 0; }
+.mem-card.featured .mem-perks li::before { color: var(--white); }
+.mem-btn {
+  display: block; text-align: center; padding: 0.85rem;
+  background: var(--white); color: var(--espresso);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.mem-btn:hover { background: var(--cream); }
+.mem-card.featured .mem-btn { background: var(--espresso); color: var(--white); }
+.mem-card.featured .mem-btn:hover { background: rgba(42,26,14,0.8); }
+
+/* ─── HOW TO PREPARE ─── */
+.prepare {
+  background: var(--sand); padding: 6rem 7vw;
+}
+.prepare-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+.prep-card {
+  background: var(--white); padding: 2.25rem 2rem;
+  border-radius: 3px; border: 1px solid rgba(176,125,87,0.12);
+}
+.prep-num {
+  font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 400;
+  color: var(--cream); line-height: 1; margin-bottom: 1rem;
+}
+.prep-title {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--espresso); margin-bottom: 0.75rem;
+}
+.prep-list {
+  list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+}
+.prep-list li {
+  font-size: 0.84rem; font-weight: 300; color: var(--warm); line-height: 1.55;
+  padding-left: 1rem; position: relative;
+}
+.prep-list li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--copper); font-weight: 700; font-size: 1rem;
+}
+
+/* ─── FAQ ─── */
+.faq { background: var(--white); padding: 6rem 7vw; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 3.5rem; background: var(--cream); border: 1px solid var(--cream); border-radius: 3px; overflow: hidden; }
+.faq-item {
+  background: var(--white); padding: 2rem 2.25rem; cursor: pointer;
+  transition: background 0.2s;
+}
+.faq-item:hover { background: var(--linen); }
+.faq-q {
+  font-size: 0.88rem; font-weight: 600; color: var(--espresso);
+  line-height: 1.5; display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 1rem; letter-spacing: 0.01em;
+}
+.faq-q::after {
+  content: '+'; color: var(--copper); font-size: 1.2rem; font-weight: 300;
+  flex-shrink: 0; transition: transform 0.2s; line-height: 1;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  font-size: 0.85rem; font-weight: 300; color: var(--warm); line-height: 1.75;
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, margin-top 0.2s;
+}
+.faq-item.open .faq-a { max-height: 400px; margin-top: 1rem; }
+
+/* ─── LOCATION ─── */
+.location {
+  background: var(--espresso); color: var(--white);
+  padding: 6rem 7vw; display: grid; grid-template-columns: 1fr 1fr; gap: 5vw;
+  align-items: center;
+}
+.location .section-eyebrow { color: var(--mist); }
+.location .section-eyebrow::before { background: var(--mist); }
+.location .section-h2 { color: var(--white); }
+.location .section-body { color: var(--mist); }
+.location-details { display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0; }
+.loc-row { display: flex; gap: 1rem; align-items: flex-start; }
+.loc-icon { color: var(--copper); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+.loc-text strong { display: block; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.2rem; }
+.loc-text span { font-size: 0.9rem; color: var(--white); font-weight: 300; line-height: 1.6; }
+.loc-text a { color: var(--copper); text-decoration: none; }
+.location-map {
+  border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.map-placeholder {
+  text-align: center; padding: 2rem;
+}
+.map-placeholder p { font-size: 0.85rem; color: var(--mist); font-weight: 300; margin-top: 0.5rem; }
+.map-placeholder strong { color: var(--white); display: block; margin-bottom: 0.5rem; }
+
+/* ─── CTA BANNER ─── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--copper) 0%, var(--accent) 100%);
+  padding: 5.5rem 7vw; text-align: center;
+}
+.cta-banner h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400; color: var(--white); margin-bottom: 0.75rem;
+}
+.cta-banner h2 em { font-style: italic; }
+.cta-banner p { font-size: 1rem; color: rgba(255,255,255,0.85); font-weight: 300; margin-bottom: 2.5rem; }
+.btn-white {
+  padding: 1rem 2.75rem; background: var(--white); color: var(--accent);
+  font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  border-radius: 2px; transition: all 0.2s; display: inline-block;
+}
+.btn-white:hover { background: var(--espresso); color: var(--white); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--espresso); border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 4rem 7vw 2.5rem;
+}
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3.5rem;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif; font-size: 1.2rem;
+  color: var(--white); text-decoration: none; display: block; margin-bottom: 1rem;
+}
+.footer-logo span { font-style: italic; color: var(--copper); }
+.footer-desc { font-size: 0.85rem; color: var(--mist); font-weight: 300; line-height: 1.7; max-width: 280px; margin-bottom: 1.75rem; }
+.footer-socials { display: flex; gap: 0.75rem; }
+.soc {
+  width: 34px; height: 34px; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--mist); text-decoration: none; font-size: 0.7rem; font-weight: 600;
+  transition: all 0.2s;
+}
+.soc:hover { border-color: var(--copper); color: var(--copper); }
+.footer-col h4 {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--white); margin-bottom: 1.25rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.footer-col ul li a {
+  font-size: 0.85rem; color: var(--mist); text-decoration: none;
+  font-weight: 300; transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--copper); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.75rem; color: rgba(214,197,180,0.5); font-weight: 300; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-label  { animation: fadeUp 0.65s 0.05s both; }
+.hero-h1     { animation: fadeUp 0.65s 0.15s both; }
+.hero-sub    { animation: fadeUp 0.65s 0.25s both; }
+.hero-btns   { animation: fadeUp 0.65s 0.35s both; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  .nav-links, .nav-book { display: none; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-image { min-height: 340px; }
+  .intro, .why, .location { grid-template-columns: 1fr; }
+  .intro-image, .why-image { min-height: 320px; }
+  .why-content { padding: 5vw 7vw; }
+  .services-grid, .membership-grid { grid-template-columns: 1fr; }
+  .prepare-grid { grid-template-columns: 1fr 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .group-banner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 600px) {
+  .prepare-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+  .tagline-bar { gap: 1.25rem; }
+  .hero-content { padding: 3.5rem 6vw 3rem; }
+  .services, .memberships, .prepare, .faq, .faq, .cta-banner { padding: 4.5rem 6vw; }
+  .location { padding: 4.5rem 6vw; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE DRAWER -->
+<div id="mobile-drawer">
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+  <div class="drawer-panel">
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+    <a href="#services" onclick="closeDrawer()">Services & Pricing</a>
+    <a href="#why" onclick="closeDrawer()">Why Kennedy</a>
+    <a href="#memberships" onclick="closeDrawer()">Memberships</a>
+    <a href="#prepare" onclick="closeDrawer()">How to Prepare</a>
+    <a href="#faq" onclick="closeDrawer()">FAQ</a>
+    <a href="#location" onclick="closeDrawer()">Location & Hours</a>
+    <a href="mailto:hello@elevatewithkennedy.com" class="drawer-book" onclick="closeDrawer()">Book Now</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Elevate With Kennedy<span>Mobile Spray Tans · North Atlanta</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Pricing</a></li>
+    <li><a href="#why">Why Kennedy</a></li>
+    <li><a href="#memberships">Memberships</a></li>
+    <li><a href="#prepare">Prep</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="mailto:hello@elevatewithkennedy.com" class="nav-book">Book Now</a>
+  <button class="hamburger" onclick="openDrawer()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-label">North Atlanta's Mobile Spray Tan Artist</p>
+    <h1 class="hero-h1">
+      It's not a spray tan.<br>
+      It's an <em>Elevate.</em>
+    </h1>
+    <p class="hero-sub">
+      A hand-sprayed, skin-first airbrush tan tailored to you — delivered to your door anywhere in Suwanee, Forsyth County, and surrounding North Atlanta.
+    </p>
+    <div class="hero-btns">
+      <a href="mailto:hello@elevatewithkennedy.com" class="btn-dark">Book Your Tan</a>
+      <a href="#services" class="btn-ghost">See Pricing</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-img-hint">
+      <div class="hero-img-hint-box">
+        <strong>Add your photo here</strong>
+        <p>Replace with a beautiful portrait or results photo for maximum impact</p>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span class="hero-badge-tag">Certified Artist</span>
+      <span class="hero-badge-title">Sjolie Sunless</span>
+      <span class="hero-badge-sub">Vegan · Cruelty-free · Made in USA</span>
+    </div>
+    <div class="hero-pill">North Atlanta</div>
+  </div>
+</section>
+
+<!-- TAGLINE BAR -->
+<div class="tagline-bar">
+  <span>Streak-Free Guarantee</span>
+  <span>Custom Color Matching</span>
+  <span>Mobile · We Come to You</span>
+  <span>Sjolie Premium Solutions</span>
+  <span>NSTPA Certified</span>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-image">
+    <div class="intro-img-label">Replace with a before/after or lifestyle photo</div>
+  </div>
+  <div class="intro-content">
+    <p class="section-eyebrow">The Elevate Experience</p>
+    <h2 class="section-h2">Your glow,<br><em>perfected.</em></h2>
+    <p class="section-body">
+      At Elevate With Kennedy, every tan is hand-sprayed using a personalized technique and premium Sjolie solution, custom-blended for your skin tone, undertone, and lifestyle. No cookie-cutter results. No orange. Just a natural, effortless glow.
+    </p>
+    <p class="section-body">
+      Kennedy comes to you — your home, your schedule, your comfort. It's the luxury spray tan experience, without the salon trip.
+    </p>
+    <ul class="check-list">
+      <li>Personalized color consultation before every session</li>
+      <li>pH-balancing prep spray for even, streak-free results</li>
+      <li>Hand-sprayed application from a certified technician</li>
+      <li>Moisture-locking finish spray to extend your glow</li>
+    </ul>
+    <a href="mailto:hello@elevatewithkennedy.com" class="btn-dark" style="align-self:flex-start">Schedule Your Session</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header center">
+    <p class="section-eyebrow">Services & Pricing</p>
+    <h2 class="section-h2">Find your <em>glow.</em></h2>
+    <p class="section-body">Every session is custom-blended and hand-sprayed. Choose the development time that works for your schedule.</p>
+  </div>
+
+  <div class="services-grid">
+    <!-- Classic -->
+    <div class="service-card">
+      <div class="service-price-tag"><sup>$</sup>60</div>
+      <div class="service-name">Classic Glow</div>
+      <p class="service-desc">For those who prefer a traditional development window. Your glow builds gradually over 12–24 hours — perfect for overnight development before a big day.</p>
+      <ul class="service-includes">
+        <li>Color consultation</li>
+        <li>pH balancing prep spray</li>
+        <li>Hand-sprayed full body application</li>
+        <li>Moisture-locking finish</li>
+        <li>Aftercare instruction card</li>
+      </ul>
+      <a href="mailto:hello@elevatewithkennedy.com" class="service-cta">Book Classic Glow</a>
+    </div>
+
+    <!-- Rapid -->
+    <div class="service-card">
+      <div class="service-popular">Most Popular</div>
+      <div class="service-price-tag"><sup>$</sup>75</div>
+      <div class="service-name">Rapid Glow</div>
+      <p class="service-desc">Glow on your schedule. Our rapid formula lets you rinse in just 3–5 hours while your tan continues developing naturally for up to 24 hours after.</p>
+      <ul class="service-includes">
+        <li>Color consultation</li>
+        <li>pH balancing prep spray</li>
+        <li>Hand-sprayed full body application</li>
+        <li>Rapid-rinse Sjolie formula (18% DHA)</li>
+        <li>Moisture-locking finish</li>
+      </ul>
+      <a href="mailto:hello@elevatewithkennedy.com" class="service-cta">Book Rapid Glow</a>
+    </div>
+  </div>
+
+  <!-- Group Banner -->
+  <div class="group-banner">
+    <div class="group-banner-text">
+      <h3>Bachelorettes, Birthdays & Groups</h3>
+      <p>Getting the whole squad glowing? Group rates available for 3+ guests. Bridal parties welcome — ask about the bridal trial tan discount.</p>
+    </div>
+    <a href="mailto:hello@elevatewithkennedy.com" class="btn-copper">Inquire About Groups →</a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-content">
+    <p class="section-eyebrow">Why Choose Kennedy</p>
+    <h2 class="section-h2">We've outsmarted<br><em>the sun.</em></h2>
+    <p class="section-body">Kennedy uses only Sjolie Sunless solutions — vegan, cruelty-free, naturally derived, and formulated for up to 10 days of gorgeous, fade-even color. No orange. No harsh chemicals.</p>
+    <div class="why-pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-body">
+          <strong>Custom Color Every Time</strong>
+          <span>Your shade is blended specifically for your skin tone, undertone, and desired depth — never a one-size-fits-all result.</span>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-body">
+          <strong>NSTPA Certified Technique</strong>
+          <span>Kennedy is trained and certified in professional spray tan application, skin science, and color theory.</span>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-body">
+          <strong>Comes to You</strong>
+          <span>Serving Suwanee, Forsyth County, North Fulton, and surrounding North Atlanta — no salon trip required.</span>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div class="pillar-body">
+          <strong>Skin-First Solutions</strong>
+          <span>Sjolie's formulas are loaded with aloe vera, vitamins A, C & E, and jojoba oil — your skin looks and feels better after every session.</span>
+        </div>
+      </div>
+    </div>
+    <a href="mailto:hello@elevatewithkennedy.com" class="btn-dark" style="align-self:flex-start">Experience the Difference</a>
+  </div>
+  <div class="why-image">
+    <div class="glow-chip">
+      <div class="glow-chip-stat">10</div>
+      <div class="glow-chip-label">Days of gorgeous, fade-even color</div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIPS -->
+<section class="memberships" id="memberships">
+  <div class="section-header">
+    <p class="section-eyebrow">Memberships</p>
+    <h2 class="section-h2">Stay glowing<br><em>year-round.</em></h2>
+    <p class="section-body">The most popular option for clients who want to maintain their glow consistently. Cancel anytime with 30 days notice.</p>
+  </div>
+
+  <div class="membership-grid">
+    <div class="mem-card">
+      <div class="mem-tier">Essential</div>
+      <div class="mem-price"><sub>$</sub>99</div>
+      <div class="mem-period">per month</div>
+      <ul class="mem-perks">
+        <li>1 Classic Glow session per month</li>
+        <li>Free upgrade to Rapid Glow</li>
+        <li>10% off additional sessions</li>
+        <li>Rollover unused sessions (30 days)</li>
+        <li>Cancel anytime with 30-day notice</li>
+      </ul>
+      <a href="mailto:hello@elevatewithkennedy.com" class="mem-btn">Join Essential</a>
+    </div>
+    <div class="mem-card featured">
+      <div class="mem-tier">Signature</div>
+      <div class="mem-price"><sub>$</sub>175</div>
+      <div class="mem-period">per month · best value</div>
+      <ul class="mem-perks">
+        <li>2 Glow sessions per month</li>
+        <li>Free upgrade to Rapid Glow on every visit</li>
+        <li>15% off additional sessions</li>
+        <li>Priority booking</li>
+        <li>Rollover unused sessions (30 days)</li>
+        <li>Cancel anytime with 30-day notice</li>
+      </ul>
+      <a href="mailto:hello@elevatewithkennedy.com" class="mem-btn">Join Signature</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREPARE -->
+<section class="prepare" id="prepare">
+  <div class="section-header center">
+    <p class="section-eyebrow">How to Prepare</p>
+    <h2 class="section-h2">Prep for your<br><em>best glow.</em></h2>
+    <p class="section-body">Proper prep is the secret to a streak-free, long-lasting tan. Follow these steps for flawless results.</p>
+  </div>
+  <div class="prepare-grid">
+    <div class="prep-card">
+      <div class="prep-num">01</div>
+      <div class="prep-title">24–48 Hours Before</div>
+      <ul class="prep-list">
+        <li>Exfoliate your entire body with an oil-free scrub</li>
+        <li>Shave or wax — do not do this day-of</li>
+        <li>Avoid self-tanners or spray tans for at least 1 week</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-num">02</div>
+      <div class="prep-title">Day of Appointment</div>
+      <ul class="prep-list">
+        <li>Arrive with clean, completely dry skin</li>
+        <li>No lotions, oils, deodorant, or perfume</li>
+        <li>Wear loose, dark clothing — this becomes your tan line</li>
+        <li>Remove nail polish if you want hands fully covered</li>
+      </ul>
+    </div>
+    <div class="prep-card">
+      <div class="prep-num">03</div>
+      <div class="prep-title">After Your Tan</div>
+      <ul class="prep-list">
+        <li>First rinse: cool water only, no soap</li>
+        <li>Pat dry — never rub</li>
+        <li>Avoid sweating, swimming, or tight clothing for 12 hrs</li>
+        <li>Moisturize daily to extend your glow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header center">
+    <p class="section-eyebrow">FAQ</p>
+    <h2 class="section-h2">Common <em>questions.</em></h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How long will my tan last?</div>
+      <div class="faq-a">On average, 7–10 days. Factors like skin type, activities, and aftercare can affect longevity. Daily moisturizing is the single biggest thing you can do to extend your glow.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Will I turn orange?</div>
+      <div class="faq-a">Not with Sjolie solutions. Kennedy uses premium, naturally derived DHA that reacts with your skin's specific chemistry. Every tan is custom-blended to your undertones — warm, cool, or neutral — for a natural bronze result.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What's the difference between Classic and Rapid?</div>
+      <div class="faq-a">The Classic Glow uses a standard formula that develops over 12–24 hours before your first rinse. The Rapid Glow uses an 18% DHA formula that allows you to rinse in just 3–5 hours while still developing fully for up to 24 hours after. Great for busy schedules.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">When should I book before an event?</div>
+      <div class="faq-a">We recommend booking 2–3 days before a major event like a wedding or gala. For vacations, book 1–2 days before you leave. First-timers: consider a trial run 2–3 weeks before your event so you know exactly what to expect.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What do I wear during my session?</div>
+      <div class="faq-a">Wear whatever you're comfortable in — bikini, strapless bra and underwear, or nothing at all. Whatever you choose becomes your "tan lines," so plan accordingly. After your session, wear loose, dark, breathable clothing.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Where do you travel for mobile appointments?</div>
+      <div class="faq-a">Kennedy services Suwanee, Forsyth County, North Fulton, Alpharetta, Johns Creek, Cumming, and surrounding North Atlanta areas. Not sure if your location is covered? Just reach out and ask — we'll do our best to accommodate.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Can I get a tan if I'm pregnant?</div>
+      <div class="faq-a">We do not provide services during the first trimester. After your first trimester, tanning is available with a completed consent form, which can be signed at your appointment. Consult your OB if you have any concerns.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you offer bridal packages?</div>
+      <div class="faq-a">Yes! We love working with brides. We offer a bridal trial tan (recommended 2–6 weeks before your wedding day) so you can experience the process and dial in your exact shade before the big day. Inquire via email for bridal pricing and packages.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div>
+    <p class="section-eyebrow">Service Area</p>
+    <h2 class="section-h2">We come<br><em>to you.</em></h2>
+    <p class="section-body">Kennedy brings the salon experience directly to your home. No commute, no waiting room — just a gorgeous tan in your own space.</p>
+    <div class="location-details">
+      <div class="loc-row">
+        <div class="loc-icon">◆</div>
+        <div class="loc-text">
+          <strong>Primary Service Area</strong>
+          <span>Suwanee · Forsyth County · North Fulton<br>Alpharetta · Johns Creek · Cumming</span>
+        </div>
+      </div>
+      <div class="loc-row">
+        <div class="loc-icon">◆</div>
+        <div class="loc-text">
+          <strong>Hours</strong>
+          <span>Monday – Friday: 9AM – 8PM<br>Saturday: 9AM – 6PM<br>Sunday: By request</span>
+        </div>
+      </div>
+      <div class="loc-row">
+        <div class="loc-icon">◆</div>
+        <div class="loc-text">
+          <strong>Book & Inquire</strong>
+          <span><a href="mailto:hello@elevatewithkennedy.com">hello@elevatewithkennedy.com</a><br>
+          <a href="https://www.instagram.com/the_kennedy_schmidt" target="_blank">@the_kennedy_schmidt</a></span>
+        </div>
+      </div>
+    </div>
+    <a href="mailto:hello@elevatewithkennedy.com" class="btn-copper">Book Your Appointment</a>
+  </div>
+  <div class="location-map">
+    <div class="map-placeholder">
+      <strong>North Atlanta, GA</strong>
+      <p>Mobile service — we travel to you within the North Atlanta metro area</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to <em>glow?</em></h2>
+  <p>Book your session today — Elevate With Kennedy comes to you.</p>
+  <a href="mailto:hello@elevatewithkennedy.com" class="btn-white">Book My Tan →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="#" class="footer-logo">Elevate With <span>Kennedy</span></a>
+      <p class="footer-desc">Mobile spray tans delivered to your door across Suwanee, Forsyth County, and North Atlanta. NSTPA certified. Sjolie Sunless solutions.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/the_kennedy_schmidt" target="_blank" class="soc" title="Instagram">IG</a>
+        <a href="mailto:hello@elevatewithkennedy.com" class="soc" title="Email">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Classic Glow — $60</a></li>
+        <li><a href="#services">Rapid Glow — $75</a></li>
+        <li><a href="#services">Group Bookings</a></li>
+        <li><a href="#memberships">Essential Membership</a></li>
+        <li><a href="#memberships">Signature Membership</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#why">Why Kennedy</a></li>
+        <li><a href="#prepare">How to Prepare</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#location">Service Area</a></li>
+        <li><a href="mailto:hello@elevatewithkennedy.com">Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Elevate With Kennedy · North Atlanta, GA</p>
+    <p>Suwanee · Forsyth County · North Fulton · Alpharetta · Johns Creek</p>
+  </div>
+</footer>
+
+<script>
+  function openDrawer() {
+    document.getElementById('mobile-drawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    document.getElementById('mobile-drawer').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+
+  // Smooth scroll nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
